@@ -22,7 +22,10 @@ import com.example.cryptotracker.crypto.presentation.coin_list.components.previe
 @Composable
 fun CoinListScreen(modifier: Modifier = Modifier, state: CoinListState) {
     if (state.isLoading) {
-        Box(modifier = Modifier.fillMaxSize()) {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
             CircularProgressIndicator()
         }
     } else {

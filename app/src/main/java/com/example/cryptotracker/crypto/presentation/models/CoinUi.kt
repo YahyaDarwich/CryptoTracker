@@ -4,6 +4,7 @@ import androidx.annotation.DrawableRes
 import com.example.cryptotracker.core.presentation.util.getDrawableIdForCoin
 import com.example.cryptotracker.crypto.domain.Coin
 import java.text.NumberFormat
+import java.util.Locale
 
 data class CoinUi(
     val id: String,
@@ -19,7 +20,7 @@ data class CoinUi(
 data class DisplayableNumber(val value: Double, val formatted: String)
 
 fun Double.toDisplayableNumber(): DisplayableNumber {
-    val formatter = NumberFormat.getNumberInstance().apply {
+    val formatter = NumberFormat.getNumberInstance(Locale.getDefault()).apply {
         minimumFractionDigits = 2
         maximumFractionDigits = 2
     }

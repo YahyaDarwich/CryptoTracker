@@ -30,7 +30,7 @@ import com.example.cryptotracker.crypto.presentation.models.DisplayableNumber
 fun ChangePrice(modifier: Modifier = Modifier, change: DisplayableNumber) {
     val isMin = change.value < 0.0
     val backgroundColor =
-        if (isMin) MaterialTheme.colorScheme.errorContainer else Color.Green.copy(alpha = 0.5f)
+        if (isMin) MaterialTheme.colorScheme.errorContainer else Color(0xFF028B02)
     val contentColor =
         if (isMin) MaterialTheme.colorScheme.onErrorContainer else Color.Green
 
