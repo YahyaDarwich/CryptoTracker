@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -37,11 +38,11 @@ fun CoinListItem(modifier: Modifier = Modifier, coinUi: CoinUi, onClick: () -> U
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        Image(
+        Icon(
             imageVector = ImageVector.vectorResource(id = coinUi.resIcon),
             contentDescription = coinUi.name,
             modifier = Modifier.size(85.dp),
-            colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary)
+            tint = MaterialTheme.colorScheme.primary
         )
 
         Column(modifier = Modifier.weight(1f)) {

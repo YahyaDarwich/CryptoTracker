@@ -16,6 +16,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.compose.CryptoTrackerTheme
 import com.example.cryptotracker.core.presentation.util.ObserveAsEvents
 import com.example.cryptotracker.core.presentation.util.toString
+import com.example.cryptotracker.crypto.presentation.coin_detail.CoinDetailScreen
 import com.example.cryptotracker.crypto.presentation.coin_list.CoinListEvent
 import com.example.cryptotracker.crypto.presentation.coin_list.CoinListScreen
 import com.example.cryptotracker.crypto.presentation.coin_list.CoinListViewModel
@@ -41,10 +42,18 @@ class MainActivity : ComponentActivity() {
                 }
 
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    CoinListScreen(
-                        state = state.value,
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    if (state.value.selectedCoin != null) {
+                        CoinDetailScreen(
+                            state = state.value,
+                            modifier = Modifier.padding(innerPadding)
+                        )
+                    } else {
+                        CoinListScreen(
+                            state = state.value,
+                            modifier = Modifier.padding(innerPadding),
+                            onAction = viewModel::onAction
+                        )
+                    }
                 }
             }
         }

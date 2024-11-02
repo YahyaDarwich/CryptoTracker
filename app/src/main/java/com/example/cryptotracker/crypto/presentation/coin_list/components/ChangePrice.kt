@@ -10,6 +10,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -42,11 +43,11 @@ fun ChangePrice(modifier: Modifier = Modifier, change: DisplayableNumber) {
             .background(backgroundColor)
             .padding(2.dp)
     ) {
-        Image(
+        Icon(
             imageVector = if (isMin) Icons.Default.KeyboardArrowDown else Icons.Default.KeyboardArrowUp,
             contentDescription = null,
             modifier = Modifier.size(20.dp),
-            colorFilter = ColorFilter.tint(color = contentColor)
+            tint = contentColor
         )
 
         Text(

@@ -5,4 +5,7 @@
     <string name="error_serialization">Serializatio or Deserialization problem\n</string>
     <string name="error_unknown">Someting went wrong, try again later!</string>
     <string name="error_to_many_requets">Too many requests\n</string>
+    <string name="market_cap">Market Cup</string>
+    <string name="price">Price</string>
+    <string name="change_last_24h">Change last 24h</string>
 </resources>
